@@ -1,6 +1,7 @@
 const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
+const userRouter = require('./routes/userRoutes.js')
 
 const app = express();
 app.use(express.json());
@@ -14,7 +15,7 @@ mongoose.connect('mongodb+srv://divyesh:div123@cluster0.538la.mongodb.net/?retry
   .catch(err => console.log('MongoDB connection error:', err));
 
 // Routes
-app.use('/api/users', require('./routes/userRoutes.js'));
+app.use('/api/users', userRouter);
 
 const PORT = 5000;
 app.listen(PORT, () => console.log(`Server running on port ${PORT}`));

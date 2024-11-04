@@ -22,7 +22,7 @@ function Signup() {
     }
 
     else {
-        alert("Login failed for some reason")
+        alert("Signup failed for some reason")
     }
 
     const result = await response.json();
@@ -36,6 +36,7 @@ function Signup() {
       <input name="email" placeholder="Email" onChange={handleChange} />
       <input name="password" type="password" placeholder="Password" onChange={handleChange} />
       <button onClick={handleSignup}>Signup</button>
+      <br></br><br></br>
       <NavLink to="/">Login to existing account</NavLink>
     </div>
   );
